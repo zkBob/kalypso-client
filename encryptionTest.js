@@ -1,6 +1,12 @@
 import { assert } from "ethers";
-import { encrypt, decrypt, getPubKey, MARKET_ID } from "./utils.js";
-const data = Buffer.from("foobar");
+import {
+  encrypt,
+  decrypt,
+  getPubKey,
+  MARKET_ID,
+  bigNumberishToBuffer,
+} from "./utils.js";
+const data = bigNumberishToBuffer(BigInt(123));
 
 export const encryptDecryptTest = (skStr) => {
   const publicKey = getPubKey(skStr);

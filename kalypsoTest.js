@@ -9,7 +9,7 @@ import {
 import { readFileSync } from "fs";
 
 export const testKalypsoEncryption = async (skStr) => {
-  const data = Buffer.from("foobar");
+  const data = bigNumberishToBuffer(BigInt(123));
   const wallet = new Wallet(
     skStr,
     new ethers.JsonRpcProvider(
@@ -30,7 +30,7 @@ export const testKalypsoEncryption = async (skStr) => {
   const decrypted = decrypt(skStr, acl, encryptedSecret, MARKET_ID);
 
   console.log(
-    `encryptDecryptTest  ${decrypted.compare(data) == 0 ? "OK" : "FAILED"}`,
+    `Kalypso Encrypt-Decrypt test  ${decrypted.compare(data) == 0 ? "OK" : "FAILED"}`,
   );
 
   const decrypted2 =
