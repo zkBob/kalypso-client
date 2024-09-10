@@ -302,12 +302,7 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bignumber.js@^9.1.1:
-  version "9.1.2"
-  resolved "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.1.2.tgz"
-  integrity sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==
-
-bignumber.js@^9.1.2:
+bignumber.js@^9.1.1, bignumber.js@^9.1.2:
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.2.tgz#b7c4242259c008903b13707983b5f4bbd31eda0c"
   integrity sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==
@@ -920,10 +915,10 @@ json5@^1.0.2:
   dependencies:
     minimist "^1.2.0"
 
-kalypso-sdk@^1.0.29:
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/kalypso-sdk/-/kalypso-sdk-1.0.29.tgz#5715f4d33fb85d3f41530856c918a890b931352c"
-  integrity sha512-d7fujDoyGF9kqTZ3eKvOSJSI840ECmKFDk3CVKids6xuMk0DZyOgZFU5VzY0yYYMJyszXbclfe4cXdYhNjRFPA==
+kalypso-sdk@^1.0.36:
+  version "1.0.36"
+  resolved "https://registry.yarnpkg.com/kalypso-sdk/-/kalypso-sdk-1.0.36.tgz#96de7fc03d417561dd4203fe8138c789324c2956"
+  integrity sha512-zhsdrHU+jQgIXk75ftqK9vZQDhIE7nW1GR1nYb9zPnQFQdGN0p377NHMSDUgSTS56Wma9pAn3YJey+DPizIWzg==
   dependencies:
     "@nomicfoundation/hardhat-ethers" "^3.0.4"
     "@types/node" "^20.4.5"

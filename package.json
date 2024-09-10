@@ -13,7 +13,7 @@
     "ethers": "^6.13.1",
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
-    "kalypso-sdk": "^1.0.29",
+    "kalypso-sdk": "^1.0.36",
     "pako": "^2.1.0",
     "typescript": "^5.4.5"
   },

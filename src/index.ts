@@ -60,15 +60,10 @@ app.post("/proveTx", async (req, res) => {
 
   console.log("received proving request acl length: ", body.acl.data.length);
 
-  const assignmentDeadline = new BigNumber(latestBlock).plus(10000000000);
-  console.log({
-    latestBlock,
-    assignmentDeadline: assignmentDeadline.toFixed(0),
-  });
-  const proofGenerationTimeInBlocks = new BigNumber(10000000000);
-
   // Create ASK request
   try {
+    const assignmentDeadline = new BigNumber(latestBlock).plus(10000000000);
+    const proofGenerationTimeInBlocks = new BigNumber(10000000000);
     const encryptedSecret = unmarshal(body.encryptedSecret);
     const acl = unmarshal(body.acl);
     const askRequest = await kalypso
@@ -86,17 +81,13 @@ app.post("/proveTx", async (req, res) => {
       );
     await askRequest.wait();
     console.log("Ask Request Hash: ", askRequest.hash);
-
     let receipt = await PROVIDER.getTransactionReceipt(askRequest.hash);
-
     if (!receipt) {
       throw new Error("failed to get tx receipt");
     }
     let blockNumber = receipt.blockNumber;
-
     let askId = await kalypso.MarketPlace().getAskId(receipt);
     console.log(`Ask ID : ${askId} minted in block ${blockNumber}`);
-
     const proof: Proof = await getProofByAskId(askId, blockNumber);
 
     // return JSON.stringify(proof);
@@ -114,35 +105,7 @@ app.get("/config", (req, res) => {
 app.listen(8092, () => {
   console.log("using pubkey", getPubKey(sk));
   printBalance(wallet);
-  sendTestRequest();
 });
-
-const sendTestRequest = () => {
-  setTimeout(async () => {
-    const encryptedRequest = await kalypso
-      .MarketPlace()
-      .createEncryptedRequestData(
-        "0xdead",
-        Buffer.from(JSON.stringify({ foo: "bar" })),
-        MARKET_ID,
-        getPubKey(sk),
-      );
-
-    try {
-      const res = await axios.post(
-        "http://localhost:8092/decrypt",
-        JSON.stringify(encryptedRequest),
-        {
-          headers: {
-            "Content-type": "application/json",
-          },
-        },
-      );
-    } catch (e: any) {
-      console.error("axios threw error ", e.response.data);
-    }
-  }, 1000);
-};
 
 const getProofByAskId = async (
   askId: string,

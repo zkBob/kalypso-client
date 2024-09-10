@@ -2,8 +2,7 @@
   "commitHash": "0xabc",
   "ref": "ref",
   "marketId": 3,
-  "pubKey": "0x04e84450db2948a8efd92fa52342fff3c3286189ca62efde1f8d96ba733247a3080d944e29f2f206d44533afc5523422f492f92fa9140e7bac48740dbb46300e45",
-  "path": "/decrypt",
+  "path": "/proveTx",
   "rpc": "https://arbitrum-sepolia.blockpi.network/v1/rpc/public",
   "payment_token": "0x01d84D33CC8636F83d2bb771e184cE57d8356863",
   "staking_token": "0xdb69299dDE4A00c99b885D9f8748B2AeD1Fe4Ed4",
@@ -18,16 +17,16 @@
   "priority_list": "0x138e29f7804Bfe8225E431c79764663620AEac54",
   "input_and_proof_format": "0x43F4159c011f6d05957182748C1F2b77C74fFDB5",
   "generatorEnclave": {
-    "url": "http://13.201.226.90:5000",
-    "utilityUrl": "http://13.201.226.90:1500"
+    "url": "/generatorEnclave5000",
+    "utilityUrl": "/generatorEnclave1500"
   },
   "ivsEnclave": {
     "url": "http://not deployed yet:5000",
     "utilityUrl": "http://not deployed yet:1500"
   },
   "matchingEngineEnclave": {
-    "url": "http://13.201.131.193:5000",
-    "utilityUrl": "http://13.201.131.193:1500"
+    "url": "/matchingEngineEnclave5000",
+    "utilityUrl": "/matchingEngineEnclave1500"
   },
   "checkInputUrl": "http://not deployed yet:3030",
   "attestationVerifierEndPoint": "http://13.201.207.60:1400"
